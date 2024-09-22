@@ -63,7 +63,7 @@
             <!-- card 1 -->
             <div class="mt-8 flex justify-center">
                 <div class="card lg:w-1/2 bg-slate-100 shadow-xl">
-                    <figure><img src="/assets/noakhali.png" alt="Flood Relief"></figure>
+                    <figure><img src="/assets/noakhali.png" alt="Flood Relief" class="mt-4"></figure>
                     
                     <div class="stat">
                         <div class="flex items-center gap-2">
@@ -81,8 +81,8 @@
 
                         <!-- donation input & btn -->
                         <div class="flex justify-center space-x-5">
-                            <input type="text" placeholder="Write Donation Amount" name="" id="" class="input input-bordered w-full">
-                            <button class="btn bg-[#B8F461]">Donate Now</button>
+                            <input type="text" placeholder="Write Donation Amount" name="" id="input-donate-noakhali" class="input input-bordered w-full">
+                            <button id="btn-donate-noakhali" class="btn bg-[#B8F461]">Donate Now</button>
                         </div>
                     </div>
                 </div>
@@ -91,7 +91,7 @@
             <!-- card 2  -->
             <div class="mt-8 flex justify-center">
                 <div class="card lg:w-1/2 bg-slate-100 shadow-xl">
-                    <figure><img src="/assets/feni.png" alt="Flood Relief"></figure>
+                    <figure><img src="/assets/feni.png" alt="Flood Relief"class="mt-4" ></figure>
                     
                     <div class="stat">
                         <div class="flex items-center gap-2">
@@ -108,7 +108,7 @@
 
                         <!-- donation input & btn -->
                         <div class="flex justify-center space-x-5">
-                            <input type="text" placeholder="Write Donation Amount" name="" id="" class="input input-bordered w-full">
+                            <input type="text" placeholder="Write Donation Amount" name="" id="input-donate-feni" class="input input-bordered w-full">
                             <button class="btn bg-[#B4F461]">Donate Now</button>
                         </div>
                     </div>
@@ -118,12 +118,12 @@
             <!-- card 3 -->
             <div class="mt-8 flex justify-center">
                 <div class="card lg:w-1/2 bg-slate-100 shadow-xl">
-                    <figure><img src="/assets/quota-protest.png" alt="Flood Relief"></figure>
+                    <figure><img src="/assets/quota-protest.png" alt="Flood Relief" class="mt-4"></figure>
                     
                     <div class="stat">
                         <div class="flex items-center gap-2">
                             <img src="/assets/coin.png" alt="">
-                            <span> 0 BDT</span>
+                            <span id="account-donate"> 0 BDT</span>
                         </div>
                     </div>
 
@@ -135,7 +135,7 @@
 
                         <!-- donation input & btn -->
                         <div class="flex justify-center space-x-5">
-                            <input type="text" placeholder="Write Donation Amount" name="" id="" class="input input-bordered w-full">
+                            <input  type="text" placeholder="Write Donation Amount" name="" id="input-donate-quota" class="input input-bordered w-full">
                             <button class="btn bg-[#B4F461]">Donate Now</button>
                         </div>
                     </div>
@@ -199,6 +199,47 @@
             .addEventListener('click', function(){
                 // console.log('history-section')
                 showSectionById('history-section');
+            })
+    </script>
+
+    <!--  math -->
+    <script>
+        // common function
+        function getInputFieldValueById(id){
+            const inputValue = document.getElementById(id).value;
+            const inputNumber = parseFloat(inputValue);
+            return inputNumber;
+            
+        }
+
+        function getTextFieldVlueId (id){
+            const textValue = document.getElementById(id).innerText;
+            const textNumber = parseFloat(textValue);
+            return textNumber;
+        }
+
+        //card-1
+        document.getElementById('btn-donate-noakhali')
+            .addEventListener('click', function(event){
+                event.preventDefault();
+                
+                const inputValue = getInputFieldValueById('input-donate-noakhali');
+                console.log(inputValue);
+
+                if(isNaN(inputValue)){
+                    alert('field to donate')
+                    return;
+                }
+
+                if(inputValue === 1000){
+                    // console.log("Tanx For Your doante")
+                    const balance = getTextFieldVlueId('account-donate');
+                    const newBalance = balance + inputValue;
+                    document.getElementById('account-donate').innerText = newBalance;
+                }
+                else{
+                    alert("Please enter positive numbers ")
+                }
             })
     </script>
 </body>
