@@ -26,9 +26,9 @@
 </head>
 
 <body class="lexend-font">
-    <header>
+    <header class="sticky-header">
         <!-- nav start -->
-        <div class="navbar bg-base-100">
+        <div class="navbar bg-base-100 ">
             <div class="navbar-start">
 
                 <a id="my-Btn" class="btn btn-ghost  text-xl">Blog</a>
@@ -54,6 +54,8 @@
             <button id="btn-donation" class="btn ">Donation</button>
             <button id="btn-history" class="btn ">History</button>
         </div>
+
+        <div class="border border-1 mt-4"></div>
         <!-- Btn section end-->
     </header>
 
@@ -64,11 +66,11 @@
             <div class="mt-8 flex justify-center">
                 <div class="card lg:w-1/2 bg-slate-100 shadow-xl">
                     <figure><img src="/assets/noakhali.png" alt="Flood Relief" class="mt-4"></figure>
-                    
+
                     <div class="stat">
                         <div class="flex items-center gap-2">
                             <img src="/assets/coin.png" alt="">
-                            <span> 0 BDT</span>
+                            <span id="account-donate-card-1"> 0 BDT</span>
                         </div>
                     </div>
 
@@ -81,22 +83,41 @@
 
                         <!-- donation input & btn -->
                         <div class="flex justify-center space-x-5">
-                            <input type="text" placeholder="Write Donation Amount" name="" id="input-donate-noakhali" class="input input-bordered w-full">
+                            <input type="text" placeholder="Write Donation Amount" name="" id="input-donate-noakhali"
+                                class="input input-bordered w-full">
                             <button id="btn-donate-noakhali" class="btn bg-[#B8F461]">Donate Now</button>
+
+                            <!-- modal btn -->
+                            <!-- Open the modal using ID.showModal() method -->
+                            <button class="hidden btn" onclick="my_modal_5.showModal()">open modal</button>
+                            <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
+                                <div class="modal-box">
+                                    <h3 class="text-lg font-bold">Hello!</h3>
+                                    <p class="py-4">Press ESC key or click the button below to close</p>
+                                    <div class="modal-action">
+                                        <form method="dialog">
+                                            <!-- if there is a button in form, it will close the modal -->
+                                            <button class="btn">Close</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </dialog>
+                            <!-- modal btn -->
                         </div>
                     </div>
                 </div>
             </div>
 
             <!-- card 2  -->
-            <div class="mt-8 flex justify-center">
+            
+            <div class=" mt-8 flex justify-center">
                 <div class="card lg:w-1/2 bg-slate-100 shadow-xl">
-                    <figure><img src="/assets/feni.png" alt="Flood Relief"class="mt-4" ></figure>
-                    
+                    <figure><img src="/assets/feni.png" alt="Flood Relief" class="mt-4"></figure>
+
                     <div class="stat">
                         <div class="flex items-center gap-2">
                             <img src="/assets/coin.png" alt="">
-                            <span> 0 BDT</span>
+                            <span id="account-donate-card-2"> 0 BDT</span>
                         </div>
                     </div>
 
@@ -104,12 +125,18 @@
                         <h2 class="card-title text-xl">
                             Donate for Flood Relief in Feni,Bangladesh
                         </h2>
-                        <p> The recent floods in Feni have devastated local communities, leading to severe disruption and loss. Your generous donation will help provide immediate aid, including food, clean water, and medical supplies, to those affected by this calamity. Together, we can offer crucial support and help rebuild lives in the aftermath of this disaster. Every contribution counts towards making a real difference. Please consider donating today to assist those in urgent need..</p>
+                        <p> The recent floods in Feni have devastated local communities, leading to severe disruption
+                            and loss. Your generous donation will help provide immediate aid, including food, clean
+                            water, and medical supplies, to those affected by this calamity. Together, we can offer
+                            crucial support and help rebuild lives in the aftermath of this disaster. Every contribution
+                            counts towards making a real difference. Please consider donating today to assist those in
+                            urgent need..</p>
 
                         <!-- donation input & btn -->
                         <div class="flex justify-center space-x-5">
-                            <input type="text" placeholder="Write Donation Amount" name="" id="input-donate-feni" class="input input-bordered w-full">
-                            <button class="btn bg-[#B4F461]">Donate Now</button>
+                            <input type="text" placeholder="Write Donation Amount" name="" id="input-donate-feni"
+                                class="input input-bordered w-full">
+                            <button id="btn-donate-feni" class="btn bg-[#B4F461]">Donate Now</button>
                         </div>
                     </div>
                 </div>
@@ -119,11 +146,11 @@
             <div class="mt-8 flex justify-center">
                 <div class="card lg:w-1/2 bg-slate-100 shadow-xl">
                     <figure><img src="/assets/quota-protest.png" alt="Flood Relief" class="mt-4"></figure>
-                    
+
                     <div class="stat">
                         <div class="flex items-center gap-2">
                             <img src="/assets/coin.png" alt="">
-                            <span id="account-donate"> 0 BDT</span>
+                            <span id="account-donate-card-3"> 0 BDT</span>
                         </div>
                     </div>
 
@@ -131,12 +158,19 @@
                         <h2 class="card-title text-xl">
                             Aid for Injured in the Quota Movement
                         </h2>
-                        <p>The recent Quota movement has resulted in numerous injuries and significant hardship for many individuals. Your support is crucial in providing medical assistance, rehabilitation, and necessary supplies to those affected. By contributing, you help ensure that injured individuals receive the care and support they need during this challenging time. Every donation plays a vital role in alleviating their suffering and aiding in their recovery. Please consider making a donation to support these brave individuals in their time of need.</p>
+                        <p>The recent Quota movement has resulted in numerous injuries and significant hardship for many
+                            individuals. Your support is crucial in providing medical assistance, rehabilitation, and
+                            necessary supplies to those affected. By contributing, you help ensure that injured
+                            individuals receive the care and support they need during this challenging time. Every
+                            donation plays a vital role in alleviating their suffering and aiding in their recovery.
+                            Please consider making a donation to support these brave individuals in their time of need.
+                        </p>
 
                         <!-- donation input & btn -->
                         <div class="flex justify-center space-x-5">
-                            <input  type="text" placeholder="Write Donation Amount" name="" id="input-donate-quota" class="input input-bordered w-full">
-                            <button class="btn bg-[#B4F461]">Donate Now</button>
+                            <input type="text" placeholder="Write Donation Amount" name="" id="input-donate-quota"
+                                class="input input-bordered w-full">
+                            <button id="btn-donate-quota" class="btn bg-[#B4F461]">Donate Now</button>
                         </div>
                     </div>
                 </div>
@@ -144,13 +178,27 @@
         </section>
 
         <!-- history section -->
-         <section  class="">
-                <div id="history-section" class="hidden mt-8">
-                    <div class="container text-center">
-                        <h1 class="text-3xl font-extrabold">History Section</h1>
-                    </div>
+        <section class="">
+            <div id="history-section" class="hidden mt-8">
+                <div class="container text-center">
+                    <h1 class="text-3xl font-extrabold">History Section</h1>
                 </div>
-         </section>
+
+                <div id="history-container" class="text-2xl text-center dorder border-2 mx-5 my-5 shadow shadow-lg">
+
+                </div>
+
+                <div id="history-container-1" class="text-2xl text-center dorder border-2 mx-5 my-5 shadow shadow-lg"></div>
+
+                <div id="history-container-2" class="text-2xl text-center dorder border-2 mx-5 my-5 shadow shadow-lg"></div>
+
+                </div>
+
+                </div>
+
+                
+            </div>
+        </section>
     </main>
 
     <footer></footer>
@@ -182,7 +230,7 @@
 
     <!-- main section js -->
     <script>
-        function showSectionById(id){
+        function showSectionById(id) {
             document.getElementById('donation-section').classList.add('hidden');
             document.getElementById('history-section').classList.add('hidden');
 
@@ -190,13 +238,13 @@
         }
 
         document.getElementById('btn-donation')
-            .addEventListener('click', function(){
+            .addEventListener('click', function () {
                 // console.log('donation-section')
                 showSectionById('donation-section');
             });
-            
-            document.getElementById('btn-history')
-            .addEventListener('click', function(){
+
+        document.getElementById('btn-history')
+            .addEventListener('click', function () {
                 // console.log('history-section')
                 showSectionById('history-section');
             })
@@ -205,14 +253,14 @@
     <!--  math -->
     <script>
         // common function
-        function getInputFieldValueById(id){
+        function getInputFieldValueById(id) {
             const inputValue = document.getElementById(id).value;
             const inputNumber = parseFloat(inputValue);
             return inputNumber;
-            
+
         }
 
-        function getTextFieldVlueId (id){
+        function getTextFieldVlueId(id) {
             const textValue = document.getElementById(id).innerText;
             const textNumber = parseFloat(textValue);
             return textNumber;
@@ -220,27 +268,130 @@
 
         //card-1
         document.getElementById('btn-donate-noakhali')
-            .addEventListener('click', function(event){
+            .addEventListener('click', function (event) {
                 event.preventDefault();
-                
-                const inputValue = getInputFieldValueById('input-donate-noakhali');
-                console.log(inputValue);
 
-                if(isNaN(inputValue)){
+                const inputValue = getInputFieldValueById('input-donate-noakhali');
+                // console.log(inputValue);
+
+                if (isNaN(inputValue)) {
                     alert('field to donate')
                     return;
                 }
 
-                if(inputValue === 1000){
+                if (inputValue === 1000) {
                     // console.log("Tanx For Your doante")
-                    const balance = getTextFieldVlueId('account-donate');
+                    const balance = getTextFieldVlueId('account-donate-card-1');
                     const newBalance = balance + inputValue;
-                    document.getElementById('account-donate').innerText = newBalance;
+                    document.getElementById('account-donate-card-1').innerText = newBalance;
+
+                    //add history
+
+                    const p = document.createElement('p');
+                    p.innerText = `${newBalance}Taka Donate For Flood at Noakhali, Bangladesh`;
+                    // console.log(p)
+                    document.getElementById('history-container').appendChild(p);
+
+                    const h1 = document.createElement('h1');
+                    const currentDateTime = new Date(); 
+                    const formatDate = currentDateTime.toLocaleString(); 
+                    h1.innerText = `Time: ${formatDate}`;
+                    document.getElementById('history-container').appendChild(h1);
+
+
                 }
-                else{
-                    alert("Please enter positive numbers ")
+                else {
+                    alert("Failed Procese, Please enter positive numbers ")
                 }
             })
+
+
+            //card-2
+            document.getElementById('btn-donate-feni')
+            .addEventListener('click', function (event) {
+                event.preventDefault();
+
+                const inputValue = getInputFieldValueById('input-donate-feni');
+                // console.log(inputValue);
+
+                if (isNaN(inputValue)) {
+                    alert('field to donate')
+                    return;
+                }
+
+                if (inputValue === 2000) {
+                    // console.log("Tanx For Your donate")
+                    const balance = getTextFieldVlueId('account-donate-card-2');
+                    const newBalance = balance + inputValue;
+                    document.getElementById('account-donate-card-2').innerText = newBalance;
+
+                    //add history
+
+                    const p = document.createElement('p');
+                    // const currentDateTime = new date();
+                    // const formatteddate = currentDateTime.TolocalString();
+                    p.innerText = `${newBalance}Taka Donate For Flood at feni, Bangladesh`;
+                    // console.log(p)
+                    document.getElementById('history-container-1').appendChild(p);
+
+                    const h1 = document.createElement('h1');
+                    const currentDateTime = new Date(); 
+                    const formatDate = currentDateTime.toLocaleString(); 
+
+                    h1.innerText = `Time: ${formatDate}`;
+                    document.getElementById('history-container-1').appendChild(h1);
+
+
+                }
+                else {
+                    alert("Failed Process, Please enter positive numbers ")
+                }
+            })
+
+
+            //card-3
+            document.getElementById('btn-donate-quota')
+            .addEventListener('click', function (event) {
+                event.preventDefault();
+
+                const inputValue = getInputFieldValueById('input-donate-quota');
+                // console.log(inputValue);
+
+                if (isNaN(inputValue)) {
+                    alert('field to donate')
+                    return;
+                }
+
+                if (inputValue === 3000) {
+                    // console.log("Tanx For Your donate")
+                    const balance = getTextFieldVlueId('account-donate-card-3');
+                    const newBalance = balance + inputValue;
+                    document.getElementById('account-donate-card-3').innerText = newBalance;
+
+                    //add history
+
+                    const p = document.createElement('p');
+                    // const currentDateTime = new date();
+                    // const formatteddate = currentDateTime.TolocalString();
+                    p.innerText = `${newBalance}Taka Donate For Flood at feni, Bangladesh`;
+                    // console.log(p)
+                    document.getElementById('history-container-2').appendChild(p);
+
+                    const h1 = document.createElement('h1');
+                    const currentDateTime = new Date(); 
+                    const formatDate = currentDateTime.toLocaleString(); 
+
+                    h1.innerText = `Time: ${formatDate}`;
+                    document.getElementById('history-container-2').appendChild(h1);
+
+
+                }
+                else {
+                    alert("Failed Process, Please enter positive numbers ")
+                }
+            })
+
+
     </script>
 </body>
 
