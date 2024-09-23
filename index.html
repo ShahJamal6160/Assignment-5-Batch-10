@@ -92,19 +92,22 @@
                         <div class="flex justify-center space-x-5">
                             <input type="text" placeholder="Write Donation Amount" name="" id="input-donate-noakhali"
                                 class="input input-bordered w-full">
-                            <button id="btn-donate-noakhali" class="btn bg-[#B8F461]">Donate Now</button>
+                            <button class="hidden btn bg-[#B8F461]">Donate Now</button>
 
                             <!-- modal btn -->
-                            <!-- Open the modal using ID.showModal() method -->
-                            <button class="hidden btn" onclick="my_modal_5.showModal()">open modal</button>
+
+                            <button id="btn-donate-noakhali" class=" btn bg-[#B8F461]" onclick="showModal()">open
+                                modal</button>
                             <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle">
                                 <div class="modal-box">
-                                    <h3 class="text-lg font-bold">Hello!</h3>
-                                    <p class="py-4">Press ESC key or click the button below to close</p>
-                                    <div class="modal-action">
+                                    <h3 class="text-lg text-center font-bold">Congrates!</h3>
+                                    <div class="flex justify-center"><img src="/assets/coin.png" alt=""
+                                            class="text-center"></div>
+                                    <p class="py-4 text-center">You Have Donate For Humankind</p>
+                                    <h1 class="text-center">Successfully</h1>
+                                    <div class="modal-action flex justify-center">
                                         <form method="dialog">
-                                            <!-- if there is a button in form, it will close the modal -->
-                                            <button class="btn">Close</button>
+                                            <button class="btn">Close Confirmation</button>
                                         </form>
                                     </div>
                                 </div>
@@ -116,7 +119,7 @@
             </div>
 
             <!-- card 2  -->
-            
+
             <div class=" mt-8 flex justify-center">
                 <div class="card lg:card-side lg:w-10/12 bg-slate-100 shadow-xl">
                     <div>
@@ -149,7 +152,26 @@
                         <div class="flex justify-center space-x-5">
                             <input type="text" placeholder="Write Donation Amount" name="" id="input-donate-feni"
                                 class="input input-bordered w-full">
-                            <button id="btn-donate-feni" class="btn bg-[#B4F461]">Donate Now</button>
+                            
+                            
+                            <!-- modal start -->
+                            <button id="btn-donate-feni" class=" btn bg-[#B8F461]" onclick="showModalFeni()">open
+                                modal</button>
+                            <dialog id="my_modal_6" class="modal modal-bottom sm:modal-middle">
+                                <div class="modal-box">
+                                    <h3 class="text-lg text-center font-bold">Congrates!</h3>
+                                    <div class="flex justify-center"><img src="/assets/coin.png" alt=""
+                                            class="text-center"></div>
+                                    <p class="py-4 text-center">You Have Donate For Humankind</p>
+                                    <h1 class="text-center">Successfully</h1>
+                                    <div class="modal-action flex justify-center">
+                                        <form method="dialog">
+                                            <button class="btn">Close Confirmation</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </dialog>
+                            <!-- modal end -->
                         </div>
                     </div>
                 </div>
@@ -159,7 +181,8 @@
             <div class="mt-8 flex justify-center">
                 <div class="card lg:card-side lg:w-10/12 bg-slate-100 shadow-xl">
                     <div>
-                        <figure><img src="/assets/quota-protest.png" alt="Flood Relief" class="mt-4 lg:w-96 lg:h-96"></figure>
+                        <figure><img src="/assets/quota-protest.png" alt="Flood Relief" class="mt-4 lg:w-96 lg:h-96">
+                        </figure>
                     </div>
 
 
@@ -189,7 +212,26 @@
                         <div class="flex justify-center space-x-5">
                             <input type="text" placeholder="Write Donation Amount" name="" id="input-donate-quota"
                                 class="input input-bordered w-full">
-                            <button id="btn-donate-quota" class="btn bg-[#B4F461]">Donate Now</button>
+                            
+
+                            <!-- modal start -->
+                            <button id="btn-donate-quota" class=" btn bg-[#B8F461]" onclick="showModalFeni()">open
+                                modal</button>
+                            <dialog id="my_modal_6" class="modal modal-bottom sm:modal-middle">
+                                <div class="modal-box">
+                                    <h3 class="text-lg text-center font-bold">Congrates!</h3>
+                                    <div class="flex justify-center"><img src="/assets/coin.png" alt=""
+                                            class="text-center"></div>
+                                    <p class="py-4 text-center">You Have Donate For Humankind</p>
+                                    <h1 class="text-center">Successfully</h1>
+                                    <div class="modal-action flex justify-center">
+                                        <form method="dialog">
+                                            <button class="btn">Close Confirmation</button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </dialog>
+                            <!-- modal end -->
                         </div>
                     </div>
                 </div>
@@ -207,15 +249,17 @@
 
                 </div>
 
-                <div id="history-container-1" class="text-2xl text-center dorder border-2 mx-5 my-5 shadow shadow-lg"></div>
-
-                <div id="history-container-2" class="text-2xl text-center dorder border-2 mx-5 my-5 shadow shadow-lg"></div>
-
+                <div id="history-container-1" class="text-2xl text-center dorder border-2 mx-5 my-5 shadow shadow-lg">
                 </div>
 
+                <div id="history-container-2" class="text-2xl text-center dorder border-2 mx-5 my-5 shadow shadow-lg">
                 </div>
 
-                
+            </div>
+
+            </div>
+
+
             </div>
         </section>
     </main>
@@ -297,6 +341,16 @@
                     alert('Please Enter a Valid Number')
                     return;
                 }
+                else {
+                    showModal();
+                }
+                //modal js
+                function showModal() {
+                    const modal = document.getElementById('my_modal_5');
+                    modal.showModal();
+                }
+
+
 
                 if (inputValue === 1000) {
                     // console.log("Tanx For Your doante")
@@ -306,7 +360,7 @@
                     const newBalance = balance + inputValue;
                     const newBalance1 = balance1 - balance;
                     console.log(newBalance, newBalance1);
-                    
+
                     document.getElementById('account-donate-card-1').innerText = newBalance;
                     document.getElementById('nav-account').innerText = newBalance1;
 
@@ -318,8 +372,8 @@
                     document.getElementById('history-container').appendChild(p);
 
                     const h1 = document.createElement('h1');
-                    const currentDateTime = new Date(); 
-                    const formatDate = currentDateTime.toLocaleString(); 
+                    const currentDateTime = new Date();
+                    const formatDate = currentDateTime.toLocaleString();
                     h1.innerText = `Time: ${formatDate}`;
                     document.getElementById('history-container').appendChild(h1);
 
@@ -331,8 +385,8 @@
             })
 
 
-            //card-2
-            document.getElementById('btn-donate-feni')
+        //card-2
+        document.getElementById('btn-donate-feni')
             .addEventListener('click', function (event) {
                 event.preventDefault();
 
@@ -340,8 +394,18 @@
                 // console.log(inputValue);
 
                 if (isNaN(inputValue)) {
-                    alert('field to donate')
+                    alert('Please Enter a Valid Number')
                     return;
+                }
+                else{
+                    showModal();
+                }
+
+                //modal js
+
+                function showModal(){
+                    const modal = document.getElementById('my_modal_5');
+                    modal.showModal();
                 }
 
                 if (inputValue === 2000) {
@@ -360,8 +424,8 @@
                     document.getElementById('history-container-1').appendChild(p);
 
                     const h1 = document.createElement('h1');
-                    const currentDateTime = new Date(); 
-                    const formatDate = currentDateTime.toLocaleString(); 
+                    const currentDateTime = new Date();
+                    const formatDate = currentDateTime.toLocaleString();
 
                     h1.innerText = `Time: ${formatDate}`;
                     document.getElementById('history-container-1').appendChild(h1);
@@ -374,8 +438,8 @@
             })
 
 
-            //card-3
-            document.getElementById('btn-donate-quota')
+        //card-3
+        document.getElementById('btn-donate-quota')
             .addEventListener('click', function (event) {
                 event.preventDefault();
 
@@ -386,6 +450,17 @@
                     alert('field to donate')
                     return;
                 }
+                else{
+                    showModal();
+                }
+
+                //modal js
+
+                function showModal(){
+                    const modal = document.getElementById('my_modal_5');
+                    modal.showModal();
+                }
+
 
                 if (inputValue === 3000) {
                     // console.log("Tanx For Your donate")
@@ -403,8 +478,8 @@
                     document.getElementById('history-container-2').appendChild(p);
 
                     const h1 = document.createElement('h1');
-                    const currentDateTime = new Date(); 
-                    const formatDate = currentDateTime.toLocaleString(); 
+                    const currentDateTime = new Date();
+                    const formatDate = currentDateTime.toLocaleString();
 
                     h1.innerText = `Time: ${formatDate}`;
                     document.getElementById('history-container-2').appendChild(h1);
@@ -415,14 +490,9 @@
                     alert("Failed Process, Please enter exactly 3000 Taka")
                 }
             })
-
-
-            
-
-
-
-
     </script>
+
+
 </body>
 
 </html>
