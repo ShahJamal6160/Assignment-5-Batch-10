@@ -42,7 +42,7 @@
                     <div class="stat">
                         <div class="flex items-center gap-2">
                             <img src="/assets/coin.png" alt="">
-                            <span>10,0000 BDT</span>
+                            <span id="nav-account">10,0000 BDT</span>
                         </div>
                     </div>
                 </div>
@@ -64,17 +64,24 @@
         <section id="donation-section" class="">
             <!-- card 1 -->
             <div class="mt-8 flex justify-center">
-                <div class="card lg:w-1/2 bg-slate-100 shadow-xl">
-                    <figure><img src="/assets/noakhali.png" alt="Flood Relief" class="mt-4"></figure>
-
-                    <div class="stat">
-                        <div class="flex items-center gap-2">
-                            <img src="/assets/coin.png" alt="">
-                            <span id="account-donate-card-1"> 0 BDT</span>
-                        </div>
+                <div class="card lg:card-side lg:w-10/12 bg-slate-100 shadow-xl flex justify-between">
+                    <div>
+                        <figure>
+                            <img src="/assets/noakhali.png" alt="Flood Relief" class="px-4 lg:w-96 lg:h-96">
+                        </figure>
                     </div>
 
+
+
                     <div class="card-body">
+
+                        <div class="stat">
+                            <div class="flex items-center gap-2">
+                                <img src="/assets/coin.png" alt="">
+                                <span id="account-donate-card-1"> 0 BDT</span>
+                            </div>
+                        </div>
+
                         <h2 class="card-title text-xl">Donate for Flood at Noakhali, Bangladesh</h2>
                         <p> The recent floods in Noakhali have caused significant damage to homes infrastructure. Your
                             donation will help provide essential supplies and to those affected by this disaster. Every
@@ -111,17 +118,23 @@
             <!-- card 2  -->
             
             <div class=" mt-8 flex justify-center">
-                <div class="card lg:w-1/2 bg-slate-100 shadow-xl">
-                    <figure><img src="/assets/feni.png" alt="Flood Relief" class="mt-4"></figure>
-
-                    <div class="stat">
-                        <div class="flex items-center gap-2">
-                            <img src="/assets/coin.png" alt="">
-                            <span id="account-donate-card-2"> 0 BDT</span>
-                        </div>
+                <div class="card lg:card-side lg:w-10/12 bg-slate-100 shadow-xl">
+                    <div>
+                        <figure><img src="/assets/feni.png" alt="Flood Relief" class="mt-4 lg:w-96 lg:h-96"></figure>
                     </div>
 
+
+
                     <div class="card-body">
+
+                        <div class="stat">
+                            <div class="flex items-center gap-2">
+                                <img src="/assets/coin.png" alt="">
+                                <span id="account-donate-card-2"> 0 BDT</span>
+                            </div>
+                        </div>
+
+
                         <h2 class="card-title text-xl">
                             Donate for Flood Relief in Feni,Bangladesh
                         </h2>
@@ -144,17 +157,23 @@
 
             <!-- card 3 -->
             <div class="mt-8 flex justify-center">
-                <div class="card lg:w-1/2 bg-slate-100 shadow-xl">
-                    <figure><img src="/assets/quota-protest.png" alt="Flood Relief" class="mt-4"></figure>
-
-                    <div class="stat">
-                        <div class="flex items-center gap-2">
-                            <img src="/assets/coin.png" alt="">
-                            <span id="account-donate-card-3"> 0 BDT</span>
-                        </div>
+                <div class="card lg:card-side lg:w-10/12 bg-slate-100 shadow-xl">
+                    <div>
+                        <figure><img src="/assets/quota-protest.png" alt="Flood Relief" class="mt-4 lg:w-96 lg:h-96"></figure>
                     </div>
 
+
+
                     <div class="card-body">
+
+                        <div class="stat">
+                            <div class="flex items-center gap-2">
+                                <img src="/assets/coin.png" alt="">
+                                <span id="account-donate-card-3"> 0 BDT</span>
+                            </div>
+                        </div>
+
+
                         <h2 class="card-title text-xl">
                             Aid for Injured in the Quota Movement
                         </h2>
@@ -275,15 +294,21 @@
                 // console.log(inputValue);
 
                 if (isNaN(inputValue)) {
-                    alert('field to donate')
+                    alert('Please Enter a Valid Number')
                     return;
                 }
 
                 if (inputValue === 1000) {
                     // console.log("Tanx For Your doante")
                     const balance = getTextFieldVlueId('account-donate-card-1');
+                    const balance1 = getTextFieldVlueId('nav-account')
+
                     const newBalance = balance + inputValue;
+                    const newBalance1 = balance1 - balance;
+                    console.log(newBalance, newBalance1);
+                    
                     document.getElementById('account-donate-card-1').innerText = newBalance;
+                    document.getElementById('nav-account').innerText = newBalance1;
 
                     //add history
 
@@ -301,7 +326,7 @@
 
                 }
                 else {
-                    alert("Failed Procese, Please enter positive numbers ")
+                    alert("Failed Process, Please enter exactly 1000 Taka ")
                 }
             })
 
@@ -344,7 +369,7 @@
 
                 }
                 else {
-                    alert("Failed Process, Please enter positive numbers ")
+                    alert("Failed Process, Please enter exactly 2000 Taka")
                 }
             })
 
@@ -387,9 +412,14 @@
 
                 }
                 else {
-                    alert("Failed Process, Please enter positive numbers ")
+                    alert("Failed Process, Please enter exactly 3000 Taka")
                 }
             })
+
+
+            
+
+
 
 
     </script>
