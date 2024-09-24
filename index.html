@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Assignment-5-Batch-10</title>
+    <link rel="shortcut icon" href="assets/SJ.JPG" type="image/x-icon">
     <link href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css" rel="stylesheet" type="text/css" />
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -59,7 +60,7 @@
         <!-- Btn section end-->
     </header>
 
-    <main>
+    <main class="">
         <!-- donation section  -->
         <section id="donation-section" class="">
             <!-- card 1 -->
@@ -265,26 +266,47 @@
         </section>
 
         <!--  accroding start-->
-        <section id="blog-section">
+        <section id="blog-section" class="hidden">
+
+            <div class="mt-5 mb-5 ">
+                <h1 class="text-5xl font-bold">Important FAQ ?</h1>
+            </div>
+
             <div class="collapse bg-base-200">
                 <input type="radio" name="my-accordion-1" checked="checked" />
                 <div class="collapse-title text-xl font-medium">What is The document Object Modal (DOM)?</div>
                 <div class="collapse-content">
-                    <p>hello</p>
+                    <p>
+                        The Document Object Model (DOM) is a programming interface for web documents.
+                    </p>
                 </div>
             </div>
             <div class="collapse bg-base-200">
                 <input type="radio" name="my-accordion-1" />
-                <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
+                <div class="collapse-title text-xl font-medium">
+                    How Do you select element from the DOM?
+                </div>
                 <div class="collapse-content">
-                    <p>hello</p>
+                    <p>You can select an element from the DOM using methods like getElementById, querySelector or querySelectorAll.</p>
                 </div>
             </div>
             <div class="collapse bg-base-200">
                 <input type="radio" name="my-accordion-1" />
-                <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
+                <div class="collapse-title text-xl font-medium">
+                    What is event delegation in the content of the DOM, And is it useful?
+                </div>
                 <div class="collapse-content">
-                    <p>hello</p>
+                    <p>Event delegation is a technique in the DOM where a single event listener is added to a parent element to manage events for its child elements.</p>
+                </div>
+            </div>
+
+            <div class="collapse bg-base-200">
+                <input type="radio" name="my-accordion-1" />
+                <div class="collapse-title text-xl font-medium">
+                    How do you manipulate an elements attributes and styles using the DOM?
+                </div>
+                <div class="collapse-content">
+                    <p>To manipulate an element’s attributes and styles using the DOM, you can use methods like setAttribute, getAttribute, and the style property.</p>
                 </div>
             </div>
         </section>
