@@ -287,7 +287,8 @@
                     How Do you select element from the DOM?
                 </div>
                 <div class="collapse-content">
-                    <p>You can select an element from the DOM using methods like getElementById, querySelector or querySelectorAll.</p>
+                    <p>You can select an element from the DOM using methods like getElementById, querySelector or
+                        querySelectorAll.</p>
                 </div>
             </div>
             <div class="collapse bg-base-200">
@@ -296,7 +297,8 @@
                     What is event delegation in the content of the DOM, And is it useful?
                 </div>
                 <div class="collapse-content">
-                    <p>Event delegation is a technique in the DOM where a single event listener is added to a parent element to manage events for its child elements.</p>
+                    <p>Event delegation is a technique in the DOM where a single event listener is added to a parent
+                        element to manage events for its child elements.</p>
                 </div>
             </div>
 
@@ -306,7 +308,8 @@
                     How do you manipulate an elements attributes and styles using the DOM?
                 </div>
                 <div class="collapse-content">
-                    <p>To manipulate an element’s attributes and styles using the DOM, you can use methods like setAttribute, getAttribute, and the style property.</p>
+                    <p>To manipulate an element’s attributes and styles using the DOM, you can use methods like
+                        setAttribute, getAttribute, and the style property.</p>
                 </div>
             </div>
         </section>
@@ -351,7 +354,7 @@
         }
 
         document.getElementById('my-Btn')
-            .addEventListener('click', function(){
+            .addEventListener('click', function () {
                 showSectionById('blog-section');
             })
 
@@ -390,7 +393,7 @@
                 event.preventDefault();
 
                 const inputValue = getInputFieldValueById('input-donate-noakhali');
-                // console.log(inputValue);
+
 
                 if (isNaN(inputValue)) {
                     alert('Please Enter a Valid Number')
@@ -399,8 +402,11 @@
                 else {
                     showModal();
                 }
-                console.log(inputValue);
+
+                
+
                 //modal js
+
                 function showModal() {
                     const modal = document.getElementById('my_modal_5');
                     modal.showModal();
@@ -410,15 +416,19 @@
 
 
                 if (inputValue) {
-                    // console.log("Tanx For Your doante")
+
                     const balance = getTextFieldVlueId('account-donate-card-1');
                     const balance1 = getTextFieldVlueId('nav-account')
 
                     const newBalance = balance + inputValue;
                     const newBalance1 = balance1 - balance;
-                    console.log(newBalance, newBalance1);
 
 
+                    if (newBalance1 < 0) {
+                        newBalance1 = 0;
+                    }
+                    
+ 
                     document.getElementById('account-donate-card-1').innerText = newBalance;
                     document.getElementById('nav-account').innerText = newBalance1;
 
@@ -471,6 +481,11 @@
                     const balance1 = getTextFieldVlueId('nav-account')
                     const newBalance = balance + inputValue;
                     const newBalance1 = balance1 - inputValue;
+
+                    if (newBalance1 < 0) {
+                        newBalance1 = 0;
+                    }
+
                     document.getElementById('account-donate-card-2').innerText = newBalance;
                     document.getElementById('nav-account').innerText = newBalance1;
 
@@ -527,6 +542,11 @@
                     const balance1 = getTextFieldVlueId('nav-account')
                     const newBalance = balance + inputValue;
                     const newBalance1 = balance1 - inputValue;
+
+                    if (newBalance1 < 0) {
+                        newBalance1 = 0;
+                    }
+
                     document.getElementById('account-donate-card-3').innerText = newBalance;
                     document.getElementById('nav-account').innerText = newBalance1;
 
