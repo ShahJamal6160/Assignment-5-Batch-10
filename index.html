@@ -26,9 +26,9 @@
 </head>
 
 <body class="lexend-font">
-    <header class="sticky top-0 z-50">
+    <header class="sticky top-0 z-50 bg-[#FFFDD0]">
         <!-- nav start -->
-        <div class="navbar bg-[#FFFDD0] ">
+        <div class="navbar  ">
             <div class="navbar-start">
 
                 <a id="my-Btn" class="btn btn-ghost  text-xl">Blog</a>
@@ -42,7 +42,7 @@
                     <div class="stat">
                         <div class="flex items-center gap-2">
                             <img src="/assets/coin.png" alt="">
-                            <span id="nav-account">10,0000 BDT</span>
+                            <span id="nav-account">100000 BDT</span>
                         </div>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
                         <div class="stat">
                             <div class="flex items-center gap-2">
                                 <img src="/assets/coin.png" alt="">
-                                <span id="account-donate-card-1"> 0 BDT</span>
+                                <span id="account-donate-card-1"> 500 BDT</span>
                             </div>
                         </div>
 
@@ -107,7 +107,7 @@
                                     <h1 class="text-center">Successfully</h1>
                                     <div class="modal-action flex justify-center">
                                         <form method="dialog">
-                                            <button class="btn">Close Confirmation</button>
+                                            <button class="btn bg-[#B8F461]">Close Confirmation</button>
                                         </form>
                                     </div>
                                 </div>
@@ -133,7 +133,7 @@
                         <div class="stat">
                             <div class="flex items-center gap-2">
                                 <img src="/assets/coin.png" alt="">
-                                <span id="account-donate-card-2"> 0 BDT</span>
+                                <span id="account-donate-card-2"> 1000 BDT</span>
                             </div>
                         </div>
 
@@ -152,8 +152,8 @@
                         <div class="flex justify-center space-x-5">
                             <input type="text" placeholder="Write Donation Amount" name="" id="input-donate-feni"
                                 class="input input-bordered w-full">
-                            
-                            
+
+
                             <!-- modal start -->
                             <button id="btn-donate-feni" class=" btn bg-[#B8F461]" onclick="showModalFeni()">open
                                 modal</button>
@@ -192,7 +192,7 @@
                         <div class="stat">
                             <div class="flex items-center gap-2">
                                 <img src="/assets/coin.png" alt="">
-                                <span id="account-donate-card-3"> 0 BDT</span>
+                                <span id="account-donate-card-3"> 2000 BDT</span>
                             </div>
                         </div>
 
@@ -212,7 +212,7 @@
                         <div class="flex justify-center space-x-5">
                             <input type="text" placeholder="Write Donation Amount" name="" id="input-donate-quota"
                                 class="input input-bordered w-full">
-                            
+
 
                             <!-- modal start -->
                             <button id="btn-donate-quota" class=" btn bg-[#B8F461]" onclick="showModalFeni()">open
@@ -245,14 +245,15 @@
                     <h1 class="text-3xl font-extrabold">History Section</h1>
                 </div>
 
-                <div id="history-container" class="text-2xl text-center dorder border-2 mx-5 my-5 shadow shadow-lg">
+
+                <div id="history-container" class="">
 
                 </div>
 
-                <div id="history-container-1" class="text-2xl text-center dorder border-2 mx-5 my-5 shadow shadow-lg">
+                <div id="history-container-1">
                 </div>
 
-                <div id="history-container-2" class="text-2xl text-center dorder border-2 mx-5 my-5 shadow shadow-lg">
+                <div id="history-container-2">
                 </div>
 
             </div>
@@ -262,6 +263,32 @@
 
             </div>
         </section>
+
+        <!--  accroding start-->
+        <section id="blog-section">
+            <div class="collapse bg-base-200">
+                <input type="radio" name="my-accordion-1" checked="checked" />
+                <div class="collapse-title text-xl font-medium">What is The document Object Modal (DOM)?</div>
+                <div class="collapse-content">
+                    <p>hello</p>
+                </div>
+            </div>
+            <div class="collapse bg-base-200">
+                <input type="radio" name="my-accordion-1" />
+                <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
+                <div class="collapse-content">
+                    <p>hello</p>
+                </div>
+            </div>
+            <div class="collapse bg-base-200">
+                <input type="radio" name="my-accordion-1" />
+                <div class="collapse-title text-xl font-medium">Click to open this one and close others</div>
+                <div class="collapse-content">
+                    <p>hello</p>
+                </div>
+            </div>
+        </section>
+        <!-- accroding end -->
     </main>
 
     <footer></footer>
@@ -296,9 +323,15 @@
         function showSectionById(id) {
             document.getElementById('donation-section').classList.add('hidden');
             document.getElementById('history-section').classList.add('hidden');
+            document.getElementById('blog-section').classList.add('hidden');
 
             document.getElementById(id).classList.remove('hidden');
         }
+
+        document.getElementById('my-Btn')
+            .addEventListener('click', function(){
+                showSectionById('blog-section');
+            })
 
         document.getElementById('btn-donation')
             .addEventListener('click', function () {
@@ -344,15 +377,17 @@
                 else {
                     showModal();
                 }
+                console.log(inputValue);
                 //modal js
                 function showModal() {
                     const modal = document.getElementById('my_modal_5');
                     modal.showModal();
+
                 }
 
 
 
-                if (inputValue === 1000) {
+                if (inputValue) {
                     // console.log("Tanx For Your doante")
                     const balance = getTextFieldVlueId('account-donate-card-1');
                     const balance1 = getTextFieldVlueId('nav-account')
@@ -361,26 +396,26 @@
                     const newBalance1 = balance1 - balance;
                     console.log(newBalance, newBalance1);
 
+
                     document.getElementById('account-donate-card-1').innerText = newBalance;
                     document.getElementById('nav-account').innerText = newBalance1;
 
-                    //add history
 
                     const p = document.createElement('p');
-                    p.innerText = `${newBalance}Taka Donate For Flood at Noakhali, Bangladesh`;
-                    // console.log(p)
-                    document.getElementById('history-container').appendChild(p);
-
-                    const h1 = document.createElement('h1');
                     const currentDateTime = new Date();
+                    // const options = {timeZone:'Asia/Dhaka', year:'numeric', day:'numeric', houre:'numeric', minute:'numeric'};
                     const formatDate = currentDateTime.toLocaleString();
-                    h1.innerText = `Time: ${formatDate}`;
-                    document.getElementById('history-container').appendChild(h1);
-
+                    p.classList.add('text-2xl', 'text-center', 'border', 'border-2', 'mx-5', 'my-5', 'shadow', 'shadow-lg');
+                    // p.innerText = `${newBalance}Taka Donate For Flood at Noakhali, Bangladesh`;
+                    p.innerHTML = `
+                        <p>${newBalance}Taka Donate For Flood at Noakhali, Bangladesh</p>
+                        <h1>Time: ${formatDate}</h1>
+                    `;
+                    document.getElementById('history-container').appendChild(p);
 
                 }
                 else {
-                    alert("Failed Process, Please enter exactly 1000 Taka ")
+                    alert("Failed Process, Please enter valid Number ")
                 }
             })
 
@@ -397,18 +432,18 @@
                     alert('Please Enter a Valid Number')
                     return;
                 }
-                else{
+                else {
                     showModal();
                 }
 
                 //modal js
 
-                function showModal(){
+                function showModal() {
                     const modal = document.getElementById('my_modal_5');
                     modal.showModal();
                 }
 
-                if (inputValue === 2000) {
+                if (inputValue) {
                     // console.log("Tanx For Your donate")
                     const balance = getTextFieldVlueId('account-donate-card-2');
                     const newBalance = balance + inputValue;
@@ -417,23 +452,22 @@
                     //add history
 
                     const p = document.createElement('p');
-                    // const currentDateTime = new date();
-                    // const formatteddate = currentDateTime.TolocalString();
-                    p.innerText = `${newBalance}Taka Donate For Flood at feni, Bangladesh`;
-                    // console.log(p)
-                    document.getElementById('history-container-1').appendChild(p);
-
-                    const h1 = document.createElement('h1');
                     const currentDateTime = new Date();
                     const formatDate = currentDateTime.toLocaleString();
+                    p.classList.add('text-2xl', 'text-center', 'border', 'border-2', 'mx-5', 'my-5', 'shadow', 'shadow-lg');
+                    // p.innerText = `${newBalance}Taka Donate For Flood at Noakhali, Bangladesh`;
+                    p.innerHTML = `
+                        <p>${newBalance}Taka Donate For Flood at Noakhali, Bangladesh</p>
+                        <h1>Time: ${formatDate}</h1>
+                    `;
 
-                    h1.innerText = `Time: ${formatDate}`;
-                    document.getElementById('history-container-1').appendChild(h1);
+                    document.getElementById('history-container-1').appendChild(p);
+
 
 
                 }
                 else {
-                    alert("Failed Process, Please enter exactly 2000 Taka")
+                    alert("Failed Process, Please enter valid Number")
                 }
             })
 
@@ -450,19 +484,19 @@
                     alert('field to donate')
                     return;
                 }
-                else{
+                else {
                     showModal();
                 }
 
                 //modal js
 
-                function showModal(){
+                function showModal() {
                     const modal = document.getElementById('my_modal_5');
                     modal.showModal();
                 }
 
 
-                if (inputValue === 3000) {
+                if (inputValue) {
                     // console.log("Tanx For Your donate")
                     const balance = getTextFieldVlueId('account-donate-card-3');
                     const newBalance = balance + inputValue;
@@ -471,23 +505,21 @@
                     //add history
 
                     const p = document.createElement('p');
-                    // const currentDateTime = new date();
-                    // const formatteddate = currentDateTime.TolocalString();
-                    p.innerText = `${newBalance}Taka Donate For Flood at feni, Bangladesh`;
-                    // console.log(p)
-                    document.getElementById('history-container-2').appendChild(p);
-
-                    const h1 = document.createElement('h1');
                     const currentDateTime = new Date();
                     const formatDate = currentDateTime.toLocaleString();
+                    p.classList.add('text-2xl', 'text-center', 'border', 'border-2', 'mx-5', 'my-5', 'shadow', 'shadow-lg');
+                    // p.innerText = `${newBalance}Taka Donate For Flood at Noakhali, Bangladesh`;
+                    p.innerHTML = `
+                        <p>${newBalance}Taka Donate For Flood at Noakhali, Bangladesh</p>
+                        <h1>Time: ${formatDate}</h1>
+                    `;
 
-                    h1.innerText = `Time: ${formatDate}`;
-                    document.getElementById('history-container-2').appendChild(h1);
+                    document.getElementById('history-container-2').appendChild(p);
 
 
                 }
                 else {
-                    alert("Failed Process, Please enter exactly 3000 Taka")
+                    alert("Failed Process, Please enter valid Number")
                 }
             })
     </script>
