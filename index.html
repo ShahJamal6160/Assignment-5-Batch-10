@@ -468,8 +468,11 @@
                 if (inputValue) {
                     // console.log("Tanx For Your donate")
                     const balance = getTextFieldVlueId('account-donate-card-2');
+                    const balance1 = getTextFieldVlueId('nav-account')
                     const newBalance = balance + inputValue;
+                    const newBalance1 = balance1 - inputValue;
                     document.getElementById('account-donate-card-2').innerText = newBalance;
+                    document.getElementById('nav-account').innerText = newBalance1;
 
                     //add history
 
@@ -521,8 +524,11 @@
                 if (inputValue) {
                     // console.log("Tanx For Your donate")
                     const balance = getTextFieldVlueId('account-donate-card-3');
+                    const balance1 = getTextFieldVlueId('nav-account')
                     const newBalance = balance + inputValue;
+                    const newBalance1 = balance1 - inputValue;
                     document.getElementById('account-donate-card-3').innerText = newBalance;
+                    document.getElementById('nav-account').innerText = newBalance1;
 
                     //add history
 
